@@ -1,3 +1,6 @@
+/* ======================
+   Recuperation et envoi formulaire de login
+====================== */
 const form = document.querySelector("form");
 
 form.addEventListener("submit", async (event) => {
@@ -47,5 +50,5 @@ function displayErrorMessage(message) {
     document.querySelector("form").appendChild(error);
   }
 
-  error.textContent = message;
+  error.textContent = "Identifiants incorrects";
 }

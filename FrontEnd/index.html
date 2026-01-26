@@ -93,20 +93,50 @@
 			<div class="modal-gallery">
 				<h3>Galerie photo</h3>
 				<div class="modal-gallery-grid"></div>
+				<hr />
 				<button id="add-photo-btn">Ajouter une photo</button>
 			</div>
 
 			<!-- Vue 2 : ajout photo -->
 			<div class="modal-add hidden">
-				<span class="back-modal">&#8592;</span>
+				<span class="back-modal"><img src="assets\icons\arrow-left.png"></span>
 				<h3>Ajout photo</h3>
 
 				<form id="add-photo-form">
-					<input type="file" id="image" accept="image/png, image/jpeg" required />
-					<input type="text" id="title" placeholder="Titre" required />
-					<select id="category" required></select>
-					<input type="submit" value="Valider" />
+					<div class="upload-zone">
+						<label for="image" class="upload-label">
+
+							<!-- ÉTAT PAR DÉFAUT -->
+							<div class="upload-placeholder">
+								<img src="assets\icons\picture-svgrepo-com 1.png" alt="Icône image" />
+								<span class="upload-btn">+ Ajouter photo</span>
+								<p class="upload-info">jpg, png : 4mo max</p>
+							</div>
+
+							<!-- APERÇU IMAGE -->
+							<img class="upload-preview hidden" alt="Aperçu image" />
+						</label>
+
+						<input type="file" id="image" name="image" accept="image/png, image/jpeg" hidden />
+					</div>
+
+					<!-- Titre et Catégorie -->
+					<label>
+						Titre
+						<input type="text" id="title" name="title" required />
+					</label>
+
+					<label>
+						Catégorie
+						<select id="category" name="category" required>
+						</select>
+					</label>
+
+					<button type="submit" disabled>Valider</button>
 				</form>
+				<p id="form-error" class="hidden">...</p>
+
+
 			</div>
 		</div>
 	</div>

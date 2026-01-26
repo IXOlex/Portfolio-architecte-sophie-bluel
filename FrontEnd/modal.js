@@ -1,4 +1,7 @@
-import { displayAdminGallery } from "./adminGallery.js";
+/* ======================
+   Init Modal Functionality
+====================== */
+import { displayAdminGallery, loadCategories } from "./adminGallery.js";
 
 export function initModal() {
   const modal = document.getElementById("modal");
@@ -14,10 +17,8 @@ export function initModal() {
 
   editButton.addEventListener("click", () => {
     modal.style.display = "flex";
-
     modalGallery.classList.remove("hidden");
     modalAdd.classList.add("hidden");
-
     displayAdminGallery();
   });
 
@@ -35,13 +36,23 @@ export function initModal() {
     }
   });
 
+  /* ======================
+    Modal Add Photo View
+====================== */
   addPhotoBtn.addEventListener("click", () => {
     modalGallery.classList.add("hidden");
     modalAdd.classList.remove("hidden");
+    loadCategories();
+    initAdminForm();
   });
 
   backButton.addEventListener("click", () => {
     modalAdd.classList.add("hidden");
     modalGallery.classList.remove("hidden");
   });
+}
+
+export function showGalleryView() {
+  document.querySelector(".modal-add").classList.add("hidden");
+  document.querySelector(".modal-gallery").classList.remove("hidden");
 }
