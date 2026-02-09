@@ -41,7 +41,9 @@ export async function displayAdminGallery() {
 
     const deleteIcon = document.createElement("span");
     deleteIcon.classList.add("delete-icon");
-    deleteIcon.textContent = "🗑️";
+    deleteIcon.style.backgroundImage = "url('assets/icons/trash-can-solid.svg')";
+    deleteIcon.alt = "Supprimer";
+    deleteIcon.classList.add("trash-icon-img");
 
     deleteIcon.addEventListener("click", async () => {
       await deleteWork(work.id);

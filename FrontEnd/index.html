@@ -15,7 +15,7 @@
 
 <body>
 	<div id="edit-banner">
-		<p>🖉 Mode édition</p>
+		<p><img src="./assets/icons/Vector.svg" alt="Mode édition"> Mode édition</p>
 	</div>
 	<header>
 		<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
@@ -99,7 +99,7 @@
 
 			<!-- Vue 2 : ajout photo -->
 			<div class="modal-add hidden">
-				<span class="back-modal"><img src="assets\icons\arrow-left.png"></span>
+				<span class="back-modal"><img src="assets/icons/arrow-left.png"></span>
 				<h3>Ajout photo</h3>
 
 				<form id="add-photo-form">
@@ -108,7 +108,7 @@
 
 							<!-- ÉTAT PAR DÉFAUT -->
 							<div class="upload-placeholder">
-								<img src="assets\icons\picture-svgrepo-com 1.png" alt="Icône image" />
+								<img src="assets/icons/picture-svgrepo-com 1.png" alt="Icône image" />
 								<span class="upload-btn">+ Ajouter photo</span>
 								<p class="upload-info">jpg, png : 4mo max</p>
 							</div>
@@ -128,14 +128,18 @@
 
 					<label>
 						Catégorie
-						<select id="category" name="category" required>
-						</select>
+						<div class="select-wrapper">
+							
+							<select id="category" name="category" required></select>
+							<span class="select-arrow"></span>
+						</div>
+
 					</label>
 					<hr />
 					<button type="submit" disabled>Valider</button>
 				</form>
 				<p id="form-error" class="hidden">...</p>
-				
+
 
 
 			</div>

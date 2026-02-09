@@ -324,7 +324,7 @@ footer nav ul {
 }
 
 #edit-banner {
-  background-color: black;
+  background-color: #000000;
   color: white;
   text-align: center;
   padding: 15px;
@@ -398,7 +398,6 @@ input[type="submit"]:hover {
 }
 
 .modal-gallery {
-  /* padding-top: 60px; */
   align-items: center;
 }
 
@@ -420,19 +419,19 @@ input[type="submit"]:hover {
   display: block;
 }
 
-.delete-icon {
+.modal-gallery-grid span {
+  background-color: black;
   position: absolute;
   top: 5px;
   right: 5px;
-  background: black;
-  color: white;
   width: 17px;
   height: 17px;
   font-size: 9px;
   display: flex;
-  align-items: center;
-  justify-content: center;
   border-radius: 2px;
+  background-size: 9px 11px;
+  background-repeat: no-repeat;
+  background-position: center;
   cursor: pointer;
 }
 
@@ -550,21 +549,46 @@ input[type="submit"]:hover {
 .modal-add select {
   margin-bottom: 21px;
   height: 50px;
-  padding: 0px 15px;
+  padding: 0px 19px;
   font-size: 14px;
   border: none;
-  background-color: white;
   box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 
 /* Select arrow clean */
-.modal-add select {
-  background-image: url("assets/icons/arrow-down.png");
-  background-repeat: no-repeat;
-  background-position: right 15px center;
-  background-size: 12px;
-  cursor: pointer;
+.modal-add select{
+  cursor:pointer;
 }
+
+.select-wrapper {
+  position: relative;
+}
+
+.select-wrapper select {
+  width: 100%;
+  height: 50px;
+  box-sizing: border-box;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.select-arrow {
+  display: flex;
+  position: absolute;
+  right: 21px;
+  top: 40%;
+  transform: translateY(-50%);
+  width: 11.18px;
+  height: 11.18px;
+  background-image: url("./icons/arrow-down.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  pointer-events: none;
+  color:#6C6C6C;
+}
+
+
 
 /* Bouton valider */
 .modal-add button[type="submit"] {
